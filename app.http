@@ -194,7 +194,7 @@ DELETE http://localhost:8000/api/restaurant/2
 ###
 GET http://localhost:8000/api/orders
 ###
-GET http://localhost:8000/api/orders/
+GET http://localhost:8000/api/orders/1
 ###
 POST http://localhost:8000/api/orders
  Content-Type: application/json
