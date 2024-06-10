@@ -1,0 +1,1 @@
+ALTER TABLE "order_menu_item" ALTER COLUMN "comment" SET DATA TYPE varchar(256);

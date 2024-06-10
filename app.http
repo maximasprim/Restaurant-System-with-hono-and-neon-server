@@ -1,0 +1,419 @@
+GET http://localhost:8000/
+
+###
+GET http://localhost:8000/api/ok
+###
+
+GET http://localhost:8000/api/time
+
+
+//users queries
+###
+GET http://localhost:8000/api/users 
+###
+GET http://localhost:8000/api/metrics
+###
+GET http://localhost:8000/api/users/1
+###
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+  {
+    "id": 3,
+    "name": "john Doe",
+    "contact_phone": 34557299,
+    "phone_verified": true,
+    "email": "john.doe@example.com",
+    "email_verified": true,
+    "confirmation_code": 12345,
+    "password": "password123"
+  }
+###
+PUT http://localhost:8000/api/users/2
+Content-Type: application/json
+
+{
+    
+    "email": "janesmitha@gmail.com"
+    
+}
+
+###
+DELETE http://localhost:8000/api/users/3
+
+//states queries
+###
+GET http://localhost:8000/api/states
+
+###
+GET http://localhost:8000/api/states/4
+
+###
+POST http://localhost:8000/api/states
+ Content-Type: application/json
+
+ {
+  "id": 6,
+  "name": "Miami",
+  "code": "MM"
+}
+
+###
+PUT http://localhost:8000/api/states/3
+ Content-Type: application/json
+
+  {
+    
+    "name": "kutus"
+    
+  }
+
+###
+DELETE http://localhost:8000/api/states/6
+//cities queries
+
+###
+GET http://localhost:8000/api/cities
+
+###
+GET http://localhost:8000/api/cities/3
+###
+POST http://localhost:8000/api/cities
+ Content-Type: application/json
+
+
+    {
+       "id": 4,
+       "name": "Atlanta",
+       "state_id": 6
+    }
+
+###
+PUT http://localhost:8000/api/cities/5
+ Content-Type: application/json
+
+  { 
+
+    "name": "Florida"
+  }
+###
+DELETE http://localhost:8000/api/cities/4
+
+//drivers queries
+###
+GET http://localhost:8000/api/drivers
+###
+GET http://localhost:8000/api/drivers/1
+###
+POST http://localhost:8000/api/drivers
+Content-Type: application/json
+
+{
+  "id": 3,
+  "car_make": "lamborghini",
+  "car_model": "Urus",
+  "car_year": 2018,
+  "user_id": 1,
+  "online": true,
+  "delivering": true
+  
+}
+
+###
+PUT http://localhost:8000/api/drivers/1
+ Content-Type: application/json
+
+ {
+  "car_model":"Crown"
+ }
+
+###
+DELETE http://localhost:8000/api/drivers/3
+
+//address queries
+###
+GET http://localhost:8000/api/address
+
+###
+GET http://localhost:8000/api/address/3
+###
+POST http://localhost:8000/api/address
+ Content-Type: application/json
+ 
+ {
+    "id": 4,
+    "street_address_1": "126 Main St",
+    "street_address_2": "Apt 1",
+    "zip_code": 90001,
+    "delivery_instructions": "Leave at the front door",
+    "user_id": 1,
+    "city_id": 2
+    
+  }
+
+###
+PUT http://localhost:8000/api/address/4
+ Content-Type: application/json
+
+ {
+  "street_address_1":"120 Uptown",
+  "stree_address_2":"Apt 2"
+ }  
+###
+DELETE http://localhost:8000/api/address/4
+
+//restaurant queries
+###
+GET http://localhost:8000/api/restaurant
+###
+GET http://localhost:8000/api/restaurant/4
+###
+POST http://localhost:8000/api/restaurant
+ Content-Type: application/json
+
+ {
+   "id": 2,
+    "name": "Pizza Paradise",
+    "street_address": "456 Flavor St",
+    "zip_code": 80302,
+    "city_id": 3
+ }
+
+  
+###
+PUT http://localhost:8000/api/restaurant/2
+ Content-Type: application/json
+  
+  {
+    "street_address":"213 Downyown"
+  }
+###
+DELETE http://localhost:8000/api/restaurant/2 
+
+//orders table queries
+###
+GET http://localhost:8000/api/orders
+###
+GET http://localhost:8000/api/orders/
+###
+POST http://localhost:8000/api/orders
+ Content-Type: application/json
+
+ {
+  "id": 2,
+  "restaurant_id": 4,
+  "estimated_delivery_time": "3 working days",
+  "actual_delivery_time": "5 working days",
+  "delivery_address_id": 3,
+  "user_id": 3,
+  "driver_id": 1,
+  "price": 1000,
+  "discount": 250,
+  "final_price": 900,
+  "comment": "Good customer service"
+ }
+
+###
+PUT http://localhost:8000/api/orders/1
+ Content-Type: application/json
+
+ {
+  "discount":"15"
+ }
+
+###
+DELETE http://localhost:8000/api/orders/1
+
+//comments microservice queries
+###
+GET http://localhost:8000/api/comments
+###
+GET http://localhost:8000/api/comments/1
+###
+POST http://localhost:8000/api/comments
+ Content-Type: application/json
+
+ {
+  "id": 2,
+  "order_id": 2,
+  "user_id": 2,
+  "comment_text": "Poor Service!",
+  "is_complaint": true,
+  "is_praise": false
+ }
+###
+PUT http://localhost:8000/api/comments/1
+ Content-Type: application/json
+
+ {
+  "comment_text":"Improve your customer service please!"
+ }
+
+###
+DELETE http://localhost:8000/api/comments/2
+
+//restaurant_owner queries
+###
+GET http://localhost:8000/api/restaurant_owner
+###
+GET http://localhost:8000/api/restaurant_owner/3
+###
+POST http://localhost:8000/api/restaurant_owner
+ Content-Type: application/json
+
+ {
+  "id": 4,
+  "restaurant_id": 2,
+  "owner_id": 3
+ }
+
+###
+PUT http://localhost:8000/api/restaurant_owner/4
+ Content-Type: application/json
+
+ {
+  "owner_id":2
+ }
+
+###
+DELETE http://localhost:8000/api/restaurant_owner/4
+
+//category table queries
+###
+GET http://localhost:8000/api/category
+###
+GET http://localhost:8000/api/category/2
+###
+POST http://localhost:8000/api/category
+ Content-Type: application/json
+
+ {
+  "id": 3,
+  "name": "Beverages"
+ }
+
+###
+PUT http://localhost:8000/api/category/3
+ Content-Type: application/json
+
+ {
+  "name":"Fries"
+ }
+
+###
+DELETE http://localhost:8000/api/category/3
+
+//menu_item queries
+###
+GET http://localhost:8000/api/menu_item
+###
+GET http://localhost:8000/api/menu_item/2
+
+###
+POST http://localhost:8000/api/menu_item
+ Content-Type: application/json
+
+ {
+  "id": 1,
+  "name": "Veggie Pizza",
+  "restaurant_id": 2,
+  "category_id": 2,
+  "description": "A healthy veggie pizza topped with bell peppers, olives, and onions",
+  "ingredients": "Dough, Tomato Sauce, Bell Peppers, Olives, Onions, Cheese",
+  "price": "1200",
+  "active": true
+ }
+
+###
+PUT http://localhost:8000/api/menu_item/1
+ Content-Type: application/json
+
+ {
+  "active":false
+ }
+
+###
+DELETE http://localhost:8000/api/menu_item/1
+
+//order_menu_iten queries
+###
+GET http://localhost:8000/api/order_menu_item
+###
+GET http://localhost:8000/api/order_menu_item/2
+###
+POST http://localhost:8000/api/order_menu_item
+ Content-Type: application/json
+
+ {
+  
+  "id": 1,
+  "order_id": 2,
+  "menu_item_id": 2,
+  "quantity": 5,
+  "item_price": "100",
+  "price": "500",
+  "comment": "Well packed please!"
+ }
+
+###
+PUT http://localhost:8000/api/order_menu_item/1
+ Content-Type: application/json
+
+ {
+  "item_price":120
+ }
+
+###
+DELETE http://localhost:8000/api/order_menu_item/1
+
+
+//status_catalogue queries
+###
+GET http://localhost:8000/api/status_catalogues
+###
+GET http://localhost:8000/api/status_catalogues/2
+### 
+POST http://localhost:8000/api/status_catalogues
+ Content-Type: application/json
+
+ {
+  "id": 3,
+  "name": "Ready for pickup"
+ }
+
+###
+PUT http://localhost:8000/api/status_catalogues/3
+ Content-Type: application/json
+
+ {
+  "name":"Already picked"
+ }
+
+###
+DELETE http://localhost:8000/api/status_catalogues/3
+
+//orderStatus queries
+###
+GET http://localhost:8000/api/orderStatus
+###
+GET http://localhost:8000/api/orderStatus/2
+###
+post http://localhost:8000/api/orderStatus
+ Content-Type: application/json
+
+ {
+  "id": 3,
+  "order_id": 2,
+  "status_catalog_id": 2
+  
+ }
+###
+put http://localhost:8000/api/orderStatus/3
+ Content-Type: application/json
+
+ {
+  "order_id":"1"
+ }
+
+###
+DELETE http://localhost:8000/api/orderStatus/3

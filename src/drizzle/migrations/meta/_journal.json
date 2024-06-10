@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1717641513902,
+      "tag": "0000_red_silhouette",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1717659202035,
+      "tag": "0001_abandoned_ozymandias",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1717827295715,
+      "tag": "0002_mysterious_magneto",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1717831808285,
+      "tag": "0003_minor_red_ghost",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1717841829262,
+      "tag": "0004_overrated_squadron_supreme",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1717916072775,
+      "tag": "0005_amused_warlock",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1717916234123,
+      "tag": "0006_rich_lester",
+      "breakpoints": true
+    }
+  ]
+}
