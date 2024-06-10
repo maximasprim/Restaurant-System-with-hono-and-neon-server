@@ -424,9 +424,10 @@ POST  http://localhost:8000/api/auth/register
  Content-Type: application/json
 
  {
-   "userId":1,
-    "username":"John Doe",
-    "password":"pass"
+   "userId":2,
+    "username":"maximas prime",
+    "password":"pass",
+    "role":"admin"
  }
 ###
 POST  http://localhost:8000/api/auth/login
