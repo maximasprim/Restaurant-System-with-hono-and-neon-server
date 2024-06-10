@@ -101,3 +101,10 @@ export const status_catalogueSchema = z.object({
 export const orderStatusSchema = z.object({
 
 })
+
+//login validator
+
+export const loginUserSchema = z.object({
+    username:z.string(),
+    password:z.string()
+})

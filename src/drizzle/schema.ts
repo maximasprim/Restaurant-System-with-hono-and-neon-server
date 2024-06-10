@@ -11,6 +11,7 @@ import {
   } from "drizzle-orm/pg-core";
   
   import { relations } from "drizzle-orm";
+import { primaryKey } from "drizzle-orm/mysql-core";
 
   // userTable creation
 export const usersTable = pgTable("users", {
@@ -343,6 +344,25 @@ export const usersTable = pgTable("users", {
     }),
   }));
 
+
+//userlogins table
+export const roleEnum = pgEnum("role", ["admin","user"])
+export const AuthOnUsersTable = pgTable("auth_on_users", {
+  id:serial("id").primaryKey(),
+  userId:integer("user_id").notNull().references(() => usersTable.id, { onDelete:"cascade"}),
+  password:varchar("password",{ length: 100}),
+  username: varchar("username", { length: 100}),
+  role: roleEnum("role").default("user")
+})
+
+//relationship between user and auth
+
+export const AuthOnUsersRelations = relations(AuthOnUsersTable, ({ one}) => ({
+  user:one(usersTable, {
+    fields: [AuthOnUsersTable.userId],
+    references: [usersTable.id]
+  })
+}))
 
 export type TIAddress = typeof addressTable.$inferInsert;
 export type TSAddress = typeof addressTable.$inferSelect;
