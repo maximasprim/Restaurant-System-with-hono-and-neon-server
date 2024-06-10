@@ -347,6 +347,7 @@ export const usersTable = pgTable("users", {
 
 //userlogins table
 export const roleEnum = pgEnum("role", ["admin","user"])
+
 export const AuthOnUsersTable = pgTable("auth_on_users", {
   id:serial("id").primaryKey(),
   userId:integer("user_id").notNull().references(() => usersTable.id, { onDelete:"cascade"}),
@@ -362,7 +363,7 @@ export const AuthOnUsersRelations = relations(AuthOnUsersTable, ({ one}) => ({
     fields: [AuthOnUsersTable.userId],
     references: [usersTable.id]
   })
-}))
+}));
 
 export type TIAuthOnUser = typeof AuthOnUsersTable.$inferInsert
 export type TSAuthOnUser = typeof AuthOnUsersTable.$inferSelect

@@ -420,11 +420,20 @@ DELETE http://localhost:8000/api/orderStatus/3
 
 //auth queries
 ###
-post http://localhost:8000/api/auth/register
+POST  http://localhost:8000/api/auth/register
  Content-Type: application/json
 
  {
    "userId":1,
+    "username":"John Doe",
+    "password":"pass"
+ }
+###
+POST  http://localhost:8000/api/auth/login
+ Content-Type: application/json
+
+ {
+   
     "username":"John Doe",
     "password":"pass"
  }
