@@ -3,6 +3,7 @@ import { createUser, getSingleUser, listUsers, updateUser, deleteUser } from "./
 import {zValidator} from "@hono/zod-validator"
 import { type Context } from "hono";
 import { userSchema } from "../validators";
+import { adminRoleAuth, userRoleAuth } from "../middleware/bearAuth";
 
 
 
@@ -11,11 +12,11 @@ import { userSchema } from "../validators";
 export const userRouter = new Hono();
 
 // get states
-userRouter.get("/users", listUsers)
+userRouter.get("/users", adminRoleAuth, listUsers)
 
 //get a single user    
 
-userRouter.get("/users/:id", getSingleUser)
+userRouter.get("/users/:id", userRoleAuth, getSingleUser)
 
 // 
 
