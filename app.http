@@ -417,3 +417,14 @@ put http://localhost:8000/api/orderStatus/3
 
 ###
 DELETE http://localhost:8000/api/orderStatus/3
+
+//auth queries
+###
+post http://localhost:8000/api/auth/register
+ Content-Type: application/json
+
+ {
+   "userId":1,
+    "username":"John Doe",
+    "password":"pass"
+ }

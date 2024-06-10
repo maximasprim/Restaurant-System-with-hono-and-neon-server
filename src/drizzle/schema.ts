@@ -364,6 +364,9 @@ export const AuthOnUsersRelations = relations(AuthOnUsersTable, ({ one}) => ({
   })
 }))
 
+export type TIAuthOnUser = typeof AuthOnUsersTable.$inferInsert
+export type TSAuthOnUser = typeof AuthOnUsersTable.$inferSelect
+
 export type TIAddress = typeof addressTable.$inferInsert;
 export type TSAddress = typeof addressTable.$inferSelect;
  

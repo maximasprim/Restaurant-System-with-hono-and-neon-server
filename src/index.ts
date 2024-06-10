@@ -22,6 +22,8 @@ import { menu_itemRouter } from './menu_item/menu_item.router'
 import { order_menu_itemRouter } from './order_menu_item/order_menu_item.router'
 import { status_catalogueRouter } from './status_catalogue/status_catalogue.router'
 import { orderStatusRouter } from './order_status/order_status.router'
+import { authRouter } from './auth/auth.router'
+
 
 const app = new Hono().basePath('/api')
 
@@ -72,6 +74,7 @@ app.route("/",menu_itemRouter)
 app.route("/",order_menu_itemRouter)
 app.route("/",status_catalogueRouter)
 app.route("/",orderStatusRouter)
+app.route("auth/",authRouter)
 
 
 console.log(`Server is running on port ${process.env.PORT}`)
