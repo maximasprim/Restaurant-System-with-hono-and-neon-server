@@ -10,12 +10,12 @@ GET http://localhost:8000/api/time
 //users queries
 ###
 GET http://localhost:8000/api/users 
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4MDY1OTQwfQ.hJCsn_VtVwPaTdpf29xrccwbH0ngtrK6Qdipzi4xzeY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIERvZSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MTA1NDMxfQ.snVEqOIxY7EKsdBa3JJIwo0jiCrmM12q7it7E8s5w2I
 ###
 GET http://localhost:8000/api/metrics
 ###
 GET http://localhost:8000/api/users/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIERvZSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MDY2MDk1fQ.a0DI77c3Dgd9vN_VBoWJL4ENtofXFGb9JaMN_4EAjP4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIERvZSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MTA1NDMxfQ.snVEqOIxY7EKsdBa3JJIwo0jiCrmM12q7it7E8s5w2I
 ###
 POST http://localhost:8000/api/users
 Content-Type: application/json
