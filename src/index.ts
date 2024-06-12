@@ -25,6 +25,7 @@ import { orderStatusRouter } from './order_status/order_status.router'
 import { authRouter } from './auth/auth.router'
 import { userRelationsRouter } from './relations/userRelations/userRelations.router'
 import { addressRelationsRouter } from './relations/addressRelations/addressRelations.router'
+import { ordersRelationsRouter} from './relations/orderRelations/orderRelations.router'
 
 const app = new Hono().basePath('/api')
 
@@ -78,6 +79,7 @@ app.route("/",orderStatusRouter)
 app.route("auth/",authRouter)
 app.route("/",userRelationsRouter)
 app.route("/",addressRelationsRouter)
+app.route("/",ordersRelationsRouter)
 
 
 console.log(`Server is running on port ${process.env.PORT}`)

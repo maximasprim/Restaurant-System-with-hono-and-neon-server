@@ -10,7 +10,7 @@ GET http://localhost:8000/api/time
 //users queries
 ###
 GET http://localhost:8000/api/users 
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIERvZSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MTA1NDMxfQ.snVEqOIxY7EKsdBa3JJIwo0jiCrmM12q7it7E8s5w2I
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4MjEzNzg4fQ.eS4zCTjxmeomQpBHqKLUZBxEoBJrPgSFcm_SN_us9Sw
 ###
 GET http://localhost:8000/api/metrics
 ###
@@ -236,7 +236,8 @@ PUT http://localhost:8000/api/orders/1
 
 ###
 DELETE http://localhost:8000/api/orders/1
-
+###
+GET http://localhost:8000/api/orderMenuItemrelations
 //comments microservice queries
 ###
 GET http://localhost:8000/api/comments
@@ -448,6 +449,6 @@ POST  http://localhost:8000/api/auth/login
 
  {
    
-    "username":"John Doe",
+    "username":"maximas prime",
     "password":"pass"
  }
