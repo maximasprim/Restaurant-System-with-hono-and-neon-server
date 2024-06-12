@@ -47,6 +47,10 @@ GET http://localhost:8000/api/useraddressrelations/
 
 ###
 GET http://localhost:8000/api/usercommentsrelations
+###
+GET http://localhost:8000/api/userdriversrelations
+###
+GET http://localhost:8000/api/singleuseraddressrelations/1
 //states queries
 ###
 GET http://localhost:8000/api/states
