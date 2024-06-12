@@ -143,7 +143,10 @@ DELETE http://localhost:8000/api/drivers/3
 //address queries
 ###
 GET http://localhost:8000/api/address
-
+###
+GET http://localhost:8000/api/addressorderrelations
+###
+GET http://localhost:8000/api/addresscityrelations
 ###
 GET http://localhost:8000/api/address/3
 ###
