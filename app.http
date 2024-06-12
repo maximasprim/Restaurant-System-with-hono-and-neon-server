@@ -42,7 +42,11 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:8000/api/users/3
+###
+GET http://localhost:8000/api/useraddressrelations/
 
+###
+GET http://localhost:8000/api/usercommentsrelations
 //states queries
 ###
 GET http://localhost:8000/api/states
@@ -236,10 +240,10 @@ POST http://localhost:8000/api/comments
  Content-Type: application/json
 
  {
-  "id": 2,
+  "id": 3,
   "order_id": 2,
   "user_id": 2,
-  "comment_text": "Poor Service!",
+  "comment_text": "Put some work in improving front offce services!",
   "is_complaint": true,
   "is_praise": false
  }

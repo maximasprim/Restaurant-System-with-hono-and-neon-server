@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { getUserWithAddressService} from './userRelations.server'
+import { getUserWithAddressService, getUsersWithCommentsService} from './userRelations.service'
 
 
 export const listUserWithAddress = async (c: Context) =>{
@@ -9,3 +9,11 @@ export const listUserWithAddress = async (c: Context) =>{
     }
       return c.json(data, 200);
   }
+
+export const listUserWithComments = async (c: Context) =>{
+    const data = await getUsersWithCommentsService();
+    if ( data == null){
+        return c.text("user not found", 404)
+    }
+    return c.json(data, 200)
+}
