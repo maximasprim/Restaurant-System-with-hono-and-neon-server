@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { createUser, getSingleUser, listUsers, updateUser, deleteUser } from "./user.controller";
+import { createUser, getSingleUser, listUsers, updateUser, deleteUser, nameslike } from "./user.controller";
 import {zValidator} from "@hono/zod-validator"
 import { type Context } from "hono";
 import { userSchema } from "../validators";
@@ -34,3 +34,6 @@ userRouter.put("/users/:id", updateUser)
 
 // delete Driver
 userRouter.delete("/users/:id", deleteUser)
+
+// get user with name begin with..
+userRouter.get("/nameslike", nameslike)

@@ -1,5 +1,5 @@
 import db from "../drizzle/db";
-import { eq } from "drizzle-orm";
+import { eq,ilike, like } from "drizzle-orm";
 import { TIUsers,TSUsers,usersTable } from "../drizzle/schema";
 
 
@@ -7,6 +7,13 @@ import { TIUsers,TSUsers,usersTable } from "../drizzle/schema";
 export const usersService = async ():Promise<TSUsers[] | null> =>{
     return await db.query.usersTable.findMany();
 
+}
+
+
+//getting city with specific names
+export const userNamelike=async (userName:string) =>{
+    const name=await db.select().from(usersTable).where(ilike(usersTable.name,`${userName}%`));
+    return name;
 }
 
 export const getUserService = async (id: number): Promise<TSUsers | undefined> => {

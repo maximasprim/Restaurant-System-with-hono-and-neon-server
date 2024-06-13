@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { usersService, getUserService, createUserService, updateUserService, deleteUserService  } from "./user.service";
+import { usersService, getUserService, createUserService, updateUserService, deleteUserService, userNamelike } from "./user.service";
 
 
 
@@ -11,6 +11,22 @@ export const listUsers = async (c: Context) =>{
   }
     return c.json(data, 200);
 }
+
+//get users with name begin with..
+export const nameslike= async (c: Context) => {
+  try{
+      const userName = String(c.req.query('userName'))
+  
+      const data = await userNamelike(userName);
+      if (data == null || data.length == 0) {
+          return c.text("cityName not found", 404)
+      }
+      return c.json(data, 200);
+  }catch (error: any) {
+      return c.json({ error: error?.message }, 400)
+  }
+  }
+
 
 export const getSingleUser = async (c: Context) => {
   const id = parseInt(c.req.param("id"));

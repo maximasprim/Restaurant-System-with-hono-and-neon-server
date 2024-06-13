@@ -10,7 +10,7 @@ GET http://localhost:8000/api/time
 //users queries
 ###
 GET http://localhost:8000/api/users 
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4MjEzNzg4fQ.eS4zCTjxmeomQpBHqKLUZBxEoBJrPgSFcm_SN_us9Sw
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjc5NDU5fQ.WOLnz460Ft0dn-YtVSXfTc-020QmemVS2YiSb-SFWNk
 ###
 GET http://localhost:8000/api/metrics
 ###
@@ -42,6 +42,9 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:8000/api/users/3
+
+###
+GET http://localhost:8000/api/nameslike?userName=m
 ###
 GET http://localhost:8000/api/useraddressrelations/
 
