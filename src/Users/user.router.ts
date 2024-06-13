@@ -3,7 +3,7 @@ import { createUser, getSingleUser, listUsers, updateUser, deleteUser, nameslike
 import {zValidator} from "@hono/zod-validator"
 import { type Context } from "hono";
 import { userSchema } from "../validators";
-import { adminRoleAuth, userRoleAuth } from "../middleware/bearAuth";
+import { adminRoleAuth, bothRolesAuth, userRoleAuth } from "../middleware/bearAuth";
 
 
 
@@ -16,7 +16,7 @@ userRouter.get("/users", adminRoleAuth, listUsers)
 
 //get a single user    
 
-userRouter.get("/users/:id", userRoleAuth, getSingleUser)
+userRouter.get("/users/:id", bothRolesAuth, getSingleUser)
 
 // 
 
@@ -26,14 +26,14 @@ userRouter.post("/users", zValidator('json', userSchema, (results, c) => {
   if (!results.success){
       return c.json(results.error, 400)
   }
-}) ,createUser)
+}) ,adminRoleAuth,createUser)
 
 //update user
 
-userRouter.put("/users/:id", updateUser)
+userRouter.put("/users/:id", adminRoleAuth, updateUser)
 
 // delete Driver
-userRouter.delete("/users/:id", deleteUser)
+userRouter.delete("/users/:id", adminRoleAuth, deleteUser)
 
 // get user with name begin with..
 userRouter.get("/nameslike", nameslike)

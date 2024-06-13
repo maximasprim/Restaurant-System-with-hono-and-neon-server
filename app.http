@@ -10,28 +10,30 @@ GET http://localhost:8000/api/time
 //users queries
 ###
 GET http://localhost:8000/api/users 
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjc5NDU5fQ.WOLnz460Ft0dn-YtVSXfTc-020QmemVS2YiSb-SFWNk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg4NjI2fQ.DxEYdkMWEOhYCUit4nuiUIlKxHx98fss1BW42OrYaZQ
 ###
 GET http://localhost:8000/api/metrics
 ###
 GET http://localhost:8000/api/users/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIERvZSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MTA1NDMxfQ.snVEqOIxY7EKsdBa3JJIwo0jiCrmM12q7it7E8s5w2I
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 ###
 POST http://localhost:8000/api/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg3NzUxfQ.FUWEbGujzcHRb1C9LopfNwSgLK2k1aE29i-NSuLVGuA
 Content-Type: application/json
 
   {
-    "id": 3,
-    "name": "john Doe",
-    "contact_phone": 34557299,
+    "id": 4,
+    "name": "Optimus prime",
+    "contact_phone": 34557289,
     "phone_verified": true,
-    "email": "john.doe@example.com",
+    "email": "optimusprime@example.com",
     "email_verified": true,
     "confirmation_code": 12345,
     "password": "password123"
   }
 ###
 PUT http://localhost:8000/api/users/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjc5NDU5fQ.WOLnz460Ft0dn-YtVSXfTc-020QmemVS2YiSb-SFWNk
 Content-Type: application/json
 
 {
@@ -41,7 +43,8 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:8000/api/users/3
+DELETE http://localhost:8000/api/users/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjc5NDU5fQ.WOLnz460Ft0dn-YtVSXfTc-020QmemVS2YiSb-SFWNk
 
 ###
 GET http://localhost:8000/api/nameslike?userName=m
@@ -54,6 +57,29 @@ GET http://localhost:8000/api/usercommentsrelations
 GET http://localhost:8000/api/userdriversrelations
 ###
 GET http://localhost:8000/api/singleuseraddressrelations/1
+
+
+//auth queries
+###
+POST  http://localhost:8000/api/auth/register
+ Content-Type: application/json
+
+ {
+   "userId":2,
+    "username":"Jane smith",
+    "password":"pass",
+    "role":"user"
+ }
+###
+POST  http://localhost:8000/api/auth/login
+ Content-Type: application/json
+
+ {
+   
+    "username":"maximas prime",
+    "password":"pass"
+ }
+
 //states queries
 ###
 GET http://localhost:8000/api/states
@@ -148,14 +174,17 @@ GET http://localhost:8000/api/driverordersRelations
 //address queries
 ###
 GET http://localhost:8000/api/address
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg2Mjk2fQ.K-v7a57IwNkc7zii1qFUGeeuvUfG2_lslpOP_Oo_6mc
 ###
 GET http://localhost:8000/api/addressorderrelations
 ###
 GET http://localhost:8000/api/addresscityrelations
 ###
 GET http://localhost:8000/api/address/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 ###
 POST http://localhost:8000/api/address
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg2Mjk2fQ.K-v7a57IwNkc7zii1qFUGeeuvUfG2_lslpOP_Oo_6mc
  Content-Type: application/json
  
  {
@@ -171,6 +200,7 @@ POST http://localhost:8000/api/address
 
 ###
 PUT http://localhost:8000/api/address/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKYW5lIHNtaXRoIiwicm9sZSI6InVzZXIiLCJleHAiOjE3MTgyODY5MTh9.bR6WfDysUqmKA9Z7nc7z_vafvlSJ0-WzCVCtiEEZOMU
  Content-Type: application/json
 
  {
@@ -182,6 +212,9 @@ DELETE http://localhost:8000/api/address/4
 
 ###
 GET http://localhost:8000/api/limitAddress?limit=1
+
+
+
 //restaurant queries
 ###
 GET http://localhost:8000/api/restaurant
@@ -438,24 +471,3 @@ put http://localhost:8000/api/orderStatus/3
 
 ###
 DELETE http://localhost:8000/api/orderStatus/3
-
-//auth queries
-###
-POST  http://localhost:8000/api/auth/register
- Content-Type: application/json
-
- {
-   "userId":2,
-    "username":"maximas prime",
-    "password":"pass",
-    "role":"admin"
- }
-###
-POST  http://localhost:8000/api/auth/login
- Content-Type: application/json
-
- {
-   
-    "username":"maximas prime",
-    "password":"pass"
- }

@@ -346,7 +346,7 @@ export const usersTable = pgTable("users", {
 
 
 //userlogins table
-export const roleEnum = pgEnum("role", ["admin","user"])
+export const roleEnum = pgEnum("role", ["admin","user","both"])
 
 export const AuthOnUsersTable = pgTable("auth_on_users", {
   id:serial("id").primaryKey(),

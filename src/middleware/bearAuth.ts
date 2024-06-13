@@ -21,6 +21,11 @@ export const authMiddleware = async (c: Context, next: Next, requiredRole: strin
 
     if (!decoded) return c.json({ error: "Invalid token" }, 401);
 
+    if (requiredRole === "both") {
+        if (decoded.role !== "admin" && decoded.role !== "user") return c.json({ error: "Unauthorized" }, 401);
+        return next();
+    }
+
     if (decoded.role !== requiredRole) return c.json({ error: "Unauthorized" }, 401);
 
     return next();
@@ -28,3 +33,4 @@ export const authMiddleware = async (c: Context, next: Next, requiredRole: strin
 
 export const adminRoleAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "admin")
 export const userRoleAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "user")
+export const bothRolesAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "both")
