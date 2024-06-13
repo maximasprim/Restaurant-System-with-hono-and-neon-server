@@ -16,7 +16,7 @@ addressRouter.get("/address",adminRoleAuth, listAddress)
 
 //get a single city    
 
-addressRouter.get("/address/:id", bothRolesAuth, getSingleAddress)
+addressRouter.get("/address/:id", userRoleAuth, getSingleAddress)
 
 
 
@@ -30,10 +30,10 @@ addressRouter.post("/address", zValidator('json', addressSchema, (results, c) =>
 
 //update City
 
-addressRouter.put("/address/:id", userRoleAuth,updateAddress)
+addressRouter.put("/address/:id", bothRolesAuth,updateAddress)
 
 // delete city
 addressRouter.delete("/address/:id", adminRoleAuth,deleteAddress)
 
 //limit address
-addressRouter.get("/limitAddress",userRoleAuth,limit)
+addressRouter.get("/limitAddress", bothRolesAuth,limit)

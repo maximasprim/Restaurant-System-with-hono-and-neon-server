@@ -3,6 +3,7 @@ import { createDriver, getSingleDriver, listDriver, updateDriver, deleteDriver }
 import {zValidator} from "@hono/zod-validator"
 import { type Context } from "hono";
 import { driverSchema } from "../validators";
+import { adminRoleAuth, bothRolesAuth, userRoleAuth } from "../middleware/bearAuth";
 
 
 
@@ -11,11 +12,11 @@ import { driverSchema } from "../validators";
 export const driverRouter = new Hono();
 
 //get states
-driverRouter.get("/drivers", listDriver)
+driverRouter.get("/drivers",bothRolesAuth, listDriver)
 
 //get a single Driver    
 
-driverRouter.get("/drivers/:id", getSingleDriver)
+driverRouter.get("/drivers/:id", userRoleAuth, getSingleDriver)
 
 
 
@@ -25,11 +26,11 @@ driverRouter.post("/drivers", zValidator('json', driverSchema, (results, c) => {
   if (!results.success){
       return c.json(results.error, 400)
   }
-}) ,createDriver)
+}) ,adminRoleAuth, createDriver)
 
 //update Driver
 
-driverRouter.put("/drivers/:id", updateDriver)
+driverRouter.put("/drivers/:id",bothRolesAuth, updateDriver)
 
 // delete Driver
-driverRouter.delete("/drivers/:id", deleteDriver)
+driverRouter.delete("/drivers/:id",adminRoleAuth, deleteDriver)

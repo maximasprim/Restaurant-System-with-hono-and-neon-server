@@ -76,19 +76,22 @@ POST  http://localhost:8000/api/auth/login
 
  {
    
-    "username":"maximas prime",
+    "username":"John Doe",
     "password":"pass"
  }
 
 //states queries
 ###
 GET http://localhost:8000/api/states
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 
 ###
 GET http://localhost:8000/api/states/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 
 ###
 POST http://localhost:8000/api/states
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
  Content-Type: application/json
 
  {
@@ -99,6 +102,7 @@ POST http://localhost:8000/api/states
 
 ###
 PUT http://localhost:8000/api/states/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
  Content-Type: application/json
 
   {
@@ -109,15 +113,18 @@ PUT http://localhost:8000/api/states/3
 
 ###
 DELETE http://localhost:8000/api/states/6
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 //cities queries
 
 ###
 GET http://localhost:8000/api/cities
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 ###
 GET http://localhost:8000/api/cities/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 ###
 POST http://localhost:8000/api/cities
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
  Content-Type: application/json
 
 
@@ -129,6 +136,7 @@ POST http://localhost:8000/api/cities
 
 ###
 PUT http://localhost:8000/api/cities/5
+Authorization: 
  Content-Type: application/json
 
   { 
@@ -137,14 +145,18 @@ PUT http://localhost:8000/api/cities/5
   }
 ###
 DELETE http://localhost:8000/api/cities/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 
 //drivers queries
 ###
 GET http://localhost:8000/api/drivers
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 ###
 GET http://localhost:8000/api/drivers/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIERvZSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MjkyOTI1fQ.aH75YM9DdvbGoBQXEB-0gZi6egBvmN9ctr0khDuyEZ4
 ###
 POST http://localhost:8000/api/drivers
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 Content-Type: application/json
 
 {
@@ -160,6 +172,7 @@ Content-Type: application/json
 
 ###
 PUT http://localhost:8000/api/drivers/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIERvZSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MjkyOTI1fQ.aH75YM9DdvbGoBQXEB-0gZi6egBvmN9ctr0khDuyEZ4
  Content-Type: application/json
 
  {
@@ -168,6 +181,7 @@ PUT http://localhost:8000/api/drivers/1
 
 ###
 DELETE http://localhost:8000/api/drivers/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 
 ###
 GET http://localhost:8000/api/driverordersRelations
@@ -181,7 +195,7 @@ GET http://localhost:8000/api/addressorderrelations
 GET http://localhost:8000/api/addresscityrelations
 ###
 GET http://localhost:8000/api/address/3
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIERvZSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MjkyOTI1fQ.aH75YM9DdvbGoBQXEB-0gZi6egBvmN9ctr0khDuyEZ4
 ###
 POST http://localhost:8000/api/address
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg2Mjk2fQ.K-v7a57IwNkc7zii1qFUGeeuvUfG2_lslpOP_Oo_6mc
@@ -209,9 +223,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKYW5lIHNtaXRoIiwi
  }  
 ###
 DELETE http://localhost:8000/api/address/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 
 ###
-GET http://localhost:8000/api/limitAddress?limit=1
+GET http://localhost:8000/api/limitAddress?limit=2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
 
 
 

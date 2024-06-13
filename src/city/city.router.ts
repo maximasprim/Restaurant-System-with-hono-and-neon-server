@@ -3,6 +3,7 @@ import { createCity, getSingleCity, listCity, updateCity, deleteCity } from "./c
 import {zValidator} from "@hono/zod-validator"
 import { type Context } from "hono";
 import { citySchema } from "../validators";
+import { adminRoleAuth, bothRolesAuth, userRoleAuth } from "../middleware/bearAuth";
 
 
 
@@ -11,11 +12,11 @@ import { citySchema } from "../validators";
 export const cityRouter = new Hono();
 
 //get states
-cityRouter.get("/cities", listCity)
+cityRouter.get("/cities",bothRolesAuth, listCity)
 
 //get a single city    
 
-cityRouter.get("/cities/:id", getSingleCity)
+cityRouter.get("/cities/:id",userRoleAuth, getSingleCity)
 
 
 
@@ -25,11 +26,11 @@ cityRouter.post("/cities", zValidator('json', citySchema, (results, c) => {
   if (!results.success){
       return c.json(results.error, 400)
   }
-}) ,createCity)
+}) ,adminRoleAuth,createCity)
 
 //update City
 
-cityRouter.put("/cities/:id", updateCity)
+cityRouter.put("/cities/:id",bothRolesAuth, updateCity)
 
 // delete city
-cityRouter.delete("/cities/:id", deleteCity)
+cityRouter.delete("/cities/:id",adminRoleAuth, deleteCity)
