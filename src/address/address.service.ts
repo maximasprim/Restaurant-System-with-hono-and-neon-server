@@ -4,10 +4,21 @@ import { TIAddress,TSAddress,addressTable } from "../drizzle/schema";
 
 
 
-export const addressService = async ():Promise<TSAddress[] | null> =>{
+export const addressService = async (limit?:number):Promise<TSAddress[] | null> =>{
+    if(limit){
+
+        return await db.query.addressTable.findMany({
+            limit: limit
+        });
+    }
     return await db.query.addressTable.findMany();
 
 }
+
+//limit
+export const limitAddress = async (limit: number) => {
+    return await db.select().from(addressTable).limit(limit);
+  };
 
 export const getAddressService = async (id: number): Promise<TSAddress | undefined> => {
     return await db.query.addressTable.findFirst({

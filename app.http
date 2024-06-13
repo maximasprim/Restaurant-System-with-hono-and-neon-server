@@ -140,6 +140,8 @@ PUT http://localhost:8000/api/drivers/1
 ###
 DELETE http://localhost:8000/api/drivers/3
 
+###
+GET http://localhost:8000/api/driverordersRelations
 //address queries
 ###
 GET http://localhost:8000/api/address
@@ -175,6 +177,8 @@ PUT http://localhost:8000/api/address/4
 ###
 DELETE http://localhost:8000/api/address/4
 
+###
+GET http://localhost:8000/api/limitAddress?limit=1
 //restaurant queries
 ###
 GET http://localhost:8000/api/restaurant

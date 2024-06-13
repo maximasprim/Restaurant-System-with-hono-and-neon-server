@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { createAddress, getSingleAddress, listAddress, updateAddress, deleteAddress } from "./address.controller";
+import { createAddress, getSingleAddress, listAddress, updateAddress, deleteAddress, limit} from "./address.controller";
 import {zValidator} from "@hono/zod-validator"
 import { type Context } from "hono";
 import { addressSchema } from "../validators";
@@ -33,3 +33,6 @@ addressRouter.put("/address/:id", updateAddress)
 
 // delete city
 addressRouter.delete("/address/:id", deleteAddress)
+
+//limit address
+addressRouter.get("/limitAddress",limit)
