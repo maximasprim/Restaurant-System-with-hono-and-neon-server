@@ -52,52 +52,201 @@ app.use('*', registerMetrics)
 app.get('/', (c) => {
   const frontPage =`(
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome to My Restaurant API</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: rgb(79, 96, 194);
-                background-image: url('../restaurant fronpage.jpg'); /* Replace with your image path */
-                background-size: cover;
-                color: #333;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                text-align: center;
-            }
-            h1 {
-                color: #faf7f7;
-                font-size: 40px;
-            }
-            ul {
-                list-style-type: none;
-                padding: 0;
-                margin-top: 20px;
-            }
-            li {
-                margin: 10px 0;
-                color: #faf7f7;
-            }
-        </style>
-    </head>
-    <body>
-        <div>
-            <h1>Welcome To My Restaurant API</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Restaurant API</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(79, 96, 194);
+            background-image: url('../restaurant\ fronpage.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px 0;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px; /* Smaller font size */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for hover effects */
+        }
+
+        .sidebar a:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.05); /* Slightly enlarge the link on hover */
+        }
+
+        /* Header Styles */
+        header {
+            margin-left: 220px; /* Adjusted to make space for the sidebar */
+            padding: 10px 20px;
+            width: calc(100% - 240px); /* Adjusted to make space for the sidebar */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Title Styles */
+        header h1 {
+            margin: 0;
+            font-size: 50px;
+            color: #2917d1; /* Adjusted to match your original color */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Content Styles */
+        .content {
+            margin-left: 220px; /* Adjusted to make space for the sidebar */
+            padding: 20px;
+            width: calc(100% - 240px); /* Adjusted to make space for the sidebar */
+            text-align: left; /* Align text to the left */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333; /* Adjusted to be more readable */
+        }
+
+        li b {
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Footer Styles */
+        footer {
+            margin-top: auto;
+            width: 100%;
+            font-size: 14px;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 25px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="/">Users</a>
+        <a href="/">States</a>
+        <a href="/">Cities</a>
+        <a href="/">Drivers</a>
+        <a href="/">Addresses</a>
+        <a href="/">Restaurants</a>
+        <a href="/">Orders</a>
+        <a href="/">Comments</a>
+        <a href="/">Restaurant Owners</a>
+        <a href="/">Categories</a>
+        <a href="/">Menu Items</a>
+        <a href="/">Order Menu Items</a>
+        <a href="/">Status Catalogue</a>
+        <a href="/">Order Status</a>
+        <a href="auth/">Auth</a>
+        <a href="/">User Relations</a>
+        <a href="/">Address Relations</a>
+        <a href="/">Orders Relations</a>
+        <a href="/">Driver Relations</a>
+    </div>
+    <header>
+        <h1>Welcome to My Restaurant API</h1>
+    </header>
+    <div class="container content">
+        <section>
+            <p style="font-size: 20px;">This API provides access to restaurant information, including menus, locations, reviews, and more. Whether you're looking to integrate restaurant data into your application or build new features, this API has you covered.</p>
+        </section>
+        <section>
+            <h2 class="section-title">Quick Start Guide</h2>
+            <p>To get started, follow these steps:</p>
             <ul>
-                <li><b>message:</b> Happy To Have You Here</li>
-                <li><b>version:</b> 1.0.0</li>
-                <li><b>docs:</b> Please feel free to query the API 📢😂😂</li>
+                <li>1. Register for an API key.</li>
+                <li>2. Read through the documentation.</li>
+                <li>3. Start making requests to our endpoints.</li>
             </ul>
-        </div>
-    </body>
-    </html>
+        </section>
+       
+        <section>
+            <h2 class="section-title">API Endpoints</h2>
+            <ul>
+                <li><b>/users</b> - Manage users</li>
+                <li><b>/states</b> - Manage states</li>
+                <li><b>/cities</b> - Manage cities</li>
+                <li><b>/drivers</b> - Manage drivers</li>
+                <li><b>/addresses</b> - Manage addresses</li>
+                <li><b>/restaurants</b> - Manage restaurants</li>
+                <li><b>/orders</b> - Manage orders</li>
+                <li><b>/comments</b> - Manage comments</li>
+                <li><b>/restaurant_owners</b> - Manage restaurant owners</li>
+                <li><b>/categories</b> - Manage categories</li>
+                <li><b>/menu_items</b> - Manage menu items</li>
+                <li><b>/order_menu_items</b> - Manage order menu items</li>
+                <li><b>/status_catalogue</b> - Manage status catalogue</li>
+                <li><b>/order_status</b> - Manage order status</li>
+                <li><b>/auth</b> - Authentication</li>
+                <li><b>/user_relations</b> - User relations</li>
+                <li><b>/address_relations</b> - Address relations</li>
+                <li><b>/orders_relations</b> - Orders relations</li>
+                <li><b>/driver_relations</b> - Driver relations</li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="section-title">Contact Information</h2>
+            <p>If you have any questions or need support, please contact us at <a href="mailto:michaelmwasame6@gmail.com">support@myrestaurantapi.com</a>.</p>
+        </section>
+    </div>
+    <footer>&copy; Maximas <script>document.write(new Date().getFullYear())</script></footer>
+</body>
+</html>
+
     
     `;
     return c.html(frontPage);
