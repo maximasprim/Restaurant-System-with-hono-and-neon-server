@@ -50,16 +50,57 @@ app.use('*', registerMetrics)
 // /default route
 
 app.get('/', (c) => {
-  return c.html(
-    html`
-   <h1>Welcome to My Restaurant API</h1>
-    <ul>
-      <li><b>message:</b> Feel Welcomed, </li>
-      <li><b>version:</b> 1.0.0,</li>
-      <li><b>docs:</b> Please feel free to query the API 📢😂😂,</li>
-      </ul>
- </p>
-    `)
+  const frontPage =`(
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome to My Restaurant API</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: rgb(79, 96, 194);
+                background-image: url('restaurant fronpage.jpg'); /* Replace with your image path */
+                background-size: cover;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+            }
+            h1 {
+                color: #faf7f7;
+                font-size: 40px;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin-top: 20px;
+            }
+            li {
+                margin: 10px 0;
+                color: #faf7f7;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Welcome To My Restaurant API</h1>
+            <ul>
+                <li><b>message:</b> Happy To Have You Here</li>
+                <li><b>version:</b> 1.0.0</li>
+                <li><b>docs:</b> Please feel free to query the API 📢😂😂</li>
+            </ul>
+        </div>
+    </body>
+    </html>
+    
+    `;
+    return c.html(frontPage);
   })
 app.get('/ok', (c) => {
   return c.text('The server is running fine')

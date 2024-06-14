@@ -493,3 +493,7 @@ put http://localhost:8000/api/orderStatus/3
 
 ###
 DELETE http://localhost:8000/api/orderStatus/3
+
+###
+GET http://localhost:8000/api/
+
