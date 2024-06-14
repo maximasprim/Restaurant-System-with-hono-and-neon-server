@@ -3,6 +3,7 @@ import { createRestaurant, getSingleRestaurant, listRestaurant, updateRestaurant
 import {zValidator} from "@hono/zod-validator"
 import { type Context } from "hono";
 import { restaurantSchema } from "../validators";
+import { adminRoleAuth, bothRolesAuth, userRoleAuth } from "../middleware/bearAuth";
 
 
 
@@ -11,11 +12,11 @@ import { restaurantSchema } from "../validators";
 export const restaurantRouter = new Hono();
 
 //get states
-restaurantRouter.get("/restaurant", listRestaurant)
+restaurantRouter.get("/restaurant", adminRoleAuth,listRestaurant)
 
 //get a single Driver    
 
-restaurantRouter.get("/restaurant/:id", getSingleRestaurant)
+restaurantRouter.get("/restaurant/:id", userRoleAuth,getSingleRestaurant)
 
 
 
@@ -25,11 +26,11 @@ restaurantRouter.post("/restaurant", zValidator('json', restaurantSchema, (resul
   if (!results.success){
       return c.json(results.error, 400)
   }
-}) ,createRestaurant)
+}) ,adminRoleAuth,createRestaurant)
 
 //update Driver
 
-restaurantRouter.put("/restaurant/:id", updateRestaurant)
+restaurantRouter.put("/restaurant/:id", bothRolesAuth,updateRestaurant)
 
 // delete Driver
-restaurantRouter.delete("/restaurant/:id", deleteRestaurant)
+restaurantRouter.delete("/restaurant/:id", adminRoleAuth,deleteRestaurant)

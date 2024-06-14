@@ -11,6 +11,7 @@ import { stateRouter } from './state/state.router'
 import { addressRouter } from './address/address.router'
 import { HTTPException } from 'hono/http-exception'
 import { type Context } from "hono";
+import { html, raw} from 'hono/html'
 import { prometheus } from '@hono/prometheus'
 import { driverRouter } from './drivers/driver.router'
 import { restaurantRouter } from './restaurant/restaurant.router'
@@ -47,6 +48,19 @@ app.use('/time',timeout(10000, customTimeoutException))
 
 app.use('*', registerMetrics)
 // /default route
+
+app.get('/', (c) => {
+  return c.html(
+    html`
+   <h1>Welcome to My Restaurant API</h1>
+    <ul>
+      <li><b>message:</b> Feel Welcomed, </li>
+      <li><b>version:</b> 1.0.0,</li>
+      <li><b>docs:</b> Please feel free to query the API 📢😂😂,</li>
+      </ul>
+ </p>
+    `)
+  })
 app.get('/ok', (c) => {
   return c.text('The server is running fine')
 })
