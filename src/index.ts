@@ -177,8 +177,8 @@ app.get('/', (c) => {
 </head>
 <body>
     <div class="sidebar">
-        <a href="/">Users</a>
-        <a href="/">States</a>
+        <a href="/">users</a>
+        <a href="/">states</a>
         <a href="/">Cities</a>
         <a href="/">Drivers</a>
         <a href="/">Addresses</a>
