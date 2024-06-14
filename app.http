@@ -76,14 +76,14 @@ POST  http://localhost:8000/api/auth/login
 
  {
    
-    "username":"John Doe",
+    "username":"maximas prime",
     "password":"pass"
  }
 
 //states queries
 ###
 GET http://localhost:8000/api/states
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mjg5NTQ0fQ.HwVGJhzwvOzdglwkxT5W_R8TFSWUKUqqq0r7gJVBslk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXhpbWFzIHByaW1lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mzc3MTk0fQ.ARUmucDTW2h-B5j2WP4Dw8IS3734Q3FOb19zsUZcnP4
 
 ###
 GET http://localhost:8000/api/states/4
