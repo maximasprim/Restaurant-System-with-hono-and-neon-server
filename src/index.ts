@@ -60,7 +60,7 @@ app.get('/', (c) => {
         <style>
             body {
                 font-family: Arial, sans-serif;
-                background-color: rgb(79, 96, 194);
+                // background-color: rgb(79, 96, 194);
                 background-image: url('restaurant fronpage.jpg'); /* Replace with your image path */
                 background-size: cover;
                 color: #333;
