@@ -177,22 +177,22 @@ app.get('/', (c) => {
 </head>
 <body>
     <div class="sidebar">
-        <a href="/users">Users</a>
-        <a href="/states">States</a>
-        <a href="/cities">Cities</a>
-        <a href="/drivers">Drivers</a>
-        <a href="/address">Addresses</a>
-        <a href="/restaurant">Restaurants</a>
-        <a href="/orders">Orders</a>
-        <a href="/comments">Comments</a>
-        <a href="/restaurant_owner">Restaurant Owners</a>
-        <a href="/category">Categories</a>
-        <a href="/menu_item">Menu Items</a>
-        <a href="/order_menu_item">Order Menu Items</a>
-        <a href="/status_catalogues">Status Catalogue</a>
-        <a href="/orderStatus">Order Status</a>
-        <a href="auth/register">Register user</a>
-        <a href="auth/login">User login</a>
+        <a href="/api/users">Users</a>
+        <a href="/api/states">States</a>
+        <a href="/api/cities">Cities</a>
+        <a href="/api/drivers">Drivers</a>
+        <a href="/api/address">Addresses</a>
+        <a href="/api/restaurant">Restaurants</a>
+        <a href="/api/orders">Orders</a>
+        <a href="/api/comments">Comments</a>
+        <a href="/api/restaurant_owner">Restaurant Owners</a>
+        <a href="/api/category">Categories</a>
+        <a href="/api/menu_item">Menu Items</a>
+        <a href="/api/order_menu_item">Order Menu Items</a>
+        <a href="/api/status_catalogues">Status Catalogue</a>
+        <a href="/api/orderStatus">Order Status</a>
+        <a href="/api/auth/register">Register user</a>
+        <a href="/api/auth/login">User login</a>
         
     </div>
     <header>
