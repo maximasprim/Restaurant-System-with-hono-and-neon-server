@@ -177,25 +177,23 @@ app.get('/', (c) => {
 </head>
 <body>
     <div class="sidebar">
-        <a href="/">users</a>
-        <a href="/">states</a>
-        <a href="/">Cities</a>
-        <a href="/">Drivers</a>
-        <a href="/">Addresses</a>
-        <a href="/">Restaurants</a>
-        <a href="/">Orders</a>
-        <a href="/">Comments</a>
-        <a href="/">Restaurant Owners</a>
-        <a href="/">Categories</a>
-        <a href="/">Menu Items</a>
-        <a href="/">Order Menu Items</a>
-        <a href="/">Status Catalogue</a>
-        <a href="/">Order Status</a>
-        <a href="auth/">Auth</a>
-        <a href="/">User Relations</a>
-        <a href="/">Address Relations</a>
-        <a href="/">Orders Relations</a>
-        <a href="/">Driver Relations</a>
+        <a href="/users">Users</a>
+        <a href="/states">States</a>
+        <a href="/cities">Cities</a>
+        <a href="/drivers">Drivers</a>
+        <a href="/address">Addresses</a>
+        <a href="/restaurant">Restaurants</a>
+        <a href="/orders">Orders</a>
+        <a href="/comments">Comments</a>
+        <a href="/restaurant_owner">Restaurant Owners</a>
+        <a href="/category">Categories</a>
+        <a href="/menu_item">Menu Items</a>
+        <a href="/order_menu_item">Order Menu Items</a>
+        <a href="/status_catalogues">Status Catalogue</a>
+        <a href="/orderStatus">Order Status</a>
+        <a href="auth/register">Register user</a>
+        <a href="auth/login">User login</a>
+        
     </div>
     <header>
         <h1>Welcome to My Restaurant API</h1>
@@ -231,11 +229,9 @@ app.get('/', (c) => {
                 <li><b>/order_menu_items</b> - Manage order menu items</li>
                 <li><b>/status_catalogue</b> - Manage status catalogue</li>
                 <li><b>/order_status</b> - Manage order status</li>
-                <li><b>/auth</b> - Authentication</li>
-                <li><b>/user_relations</b> - User relations</li>
-                <li><b>/address_relations</b> - Address relations</li>
-                <li><b>/orders_relations</b> - Orders relations</li>
-                <li><b>/driver_relations</b> - Driver relations</li>
+                <li><b>/auth/register</b> - Authentication</li>
+                <li><b>/auth/login</b> - Authorization</li>
+                
             </ul>
         </section>
         <section>
