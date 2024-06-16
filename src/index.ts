@@ -1,6 +1,8 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import "dotenv/config"
+import mailFunction from "./mail";
+import cron from 'node-cron'
 import {logger} from 'hono/logger'
 import {csrf} from 'hono/csrf'
 import { trimTrailingSlash } from 'hono/trailing-slash'
@@ -29,6 +31,7 @@ import { addressRelationsRouter } from './relations/addressRelations/addressRela
 import { ordersRelationsRouter} from './relations/orderRelations/orderRelations.router'
 import { driverRelationsRouter } from './relations/driverRelations/driverRelations.router'
 
+
 const app = new Hono().basePath('/api')
 
 const customTimeoutException = () =>
@@ -50,7 +53,7 @@ app.use('*', registerMetrics)
 // /default route
 
 app.get('/', (c) => {
-  const frontPage =`(
+  const frontPage =`
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +65,7 @@ app.get('/', (c) => {
         body {
             font-family: Arial, sans-serif;
             background-color: rgb(79, 96, 194);
-            background-image: url('../restaurant\ fronpage.jpg'); /* Replace with your image path */
+            background-image: url('../restaurant fronpage.jpg'); /* Replace with your image path */
             background-size: cover;
             background-position: center;
             color: #333;
