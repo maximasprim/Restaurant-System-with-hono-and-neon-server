@@ -65,7 +65,7 @@ app.get('/', (c) => {
         body {
             font-family: Arial, sans-serif;
             background-color: rgb(79, 96, 194);
-            background-image: url('../restaurant fronpage.jpg'); /* Replace with your image path */
+            background-image: url('https://t3.ftcdn.net/jpg/03/24/73/92/360_F_324739203_keeq8udvv0P2h1MLYJ0GLSlTBagoXS48.webp'); /* Replace with your image path */
             background-size: cover;
             background-position: center;
             color: #333;
